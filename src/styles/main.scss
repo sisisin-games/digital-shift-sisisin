@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vsc-controller {
+  display: none;
+}
+
+.font-cinzel {
+  font-family: Cinzel, serif;
+}
+
+.font-audiowide {
+  font-family: Audiowide;
+}
+
+.text-shadow-1 {
+  text-shadow: 0 0 1rem #000;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s steps(2) infinite;
+  will-change: opacity;
+}

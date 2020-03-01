@@ -56,7 +56,7 @@ events.$on('gameOver', async () => {
     database.history.add({
       date: now,
       score: state.score,
-      altitude: state.y,
+      altitude: state.topLine,
       time: now.getTime() - state.startTime,
     }),
   ])

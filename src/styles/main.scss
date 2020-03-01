@@ -19,6 +19,14 @@ body {
   display: none;
 }
 
+.left-100 {
+  left: 100%;
+}
+
+.right-100 {
+  right: 100%;
+}
+
 .max-h-half {
   max-height: 50vmin;
 }
@@ -33,6 +41,10 @@ body {
 
 .text-shadow-1 {
   text-shadow: 0 0 1rem #000;
+}
+
+.backdrop-filter-blur {
+  backdrop-filter: blur(2px);
 }
 
 @keyframes blink {

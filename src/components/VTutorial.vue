@@ -50,14 +50,7 @@
         />
       </div>
       <div class="page" :key="page" v-else-if="page === 6">
-        <vue-typer
-          :repeat="0"
-          :text="
-            '日本企業の変革を進めると、ホールディングスは\n“デジタルシフトカンパニー” として発展します。'
-          "
-          @completed="blink = true"
-        />
-        <table class="m-auto mt-8">
+        <table class="m-auto mt-8 animated fadeInRight">
           <tr>
             <td>
               <img
@@ -86,6 +79,14 @@
             <td class="pl-8 text-right">1 pt</td>
           </tr>
         </table>
+
+        <vue-typer
+          :repeat="0"
+          :text="
+            '日本企業の変革を進めると、ホールディングスは\n“デジタルシフトカンパニー” として発展します。'
+          "
+          @completed="blink = true"
+        />
       </div>
       <div class="page" :key="page" v-else ref="end">
         <vue-typer :repeat="0" text="デジタルシフトを実現し続ける sisisin となって事業を拡大し、" />

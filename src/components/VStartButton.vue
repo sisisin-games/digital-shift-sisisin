@@ -1,6 +1,6 @@
 <template>
   <div
-    class="start-button flex flex-col items-center mt-20 py-4 px-40 font-audiowide text-2xl text-black cursor-pointer"
+    class="start-button flex flex-col items-center mt-12 py-4 px-40 font-audiowide text-3xl text-black backdrop-filter-blur cursor-pointer"
     tabindex="1"
     @click="start"
   >

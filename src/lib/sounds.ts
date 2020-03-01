@@ -114,6 +114,7 @@ export const seManager = promiseMapValues(
     daisuke: require('@/assets/sounds/se_daisuke.mp4'),
     noboru: require('@/assets/sounds/se_noboru.mp4'),
     gameOver: require('@/assets/sounds/se_gameOver.mp4'),
+    newRecord: require('@/assets/sounds/se_newRecord.mp4'),
   },
   AudioSource.load,
 ).then(SeManager.of)

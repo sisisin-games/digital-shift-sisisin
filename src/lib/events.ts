@@ -3,7 +3,7 @@ import { getRandomQuoteText } from './quotes'
 import { bgmManager, seManager } from './sounds'
 import { createId, initGameState, state } from './state'
 import { Daisuke, Noboru, Point, TextEffect } from './types'
-import { database } from './database'
+import { database, getHighScore } from './database'
 import { msleep } from './common'
 
 export const events = new Vue()
@@ -32,6 +32,7 @@ events.$on('tutorialCompleted', async () => {
 })
 
 events.$on('gameReady', async () => {
+  state.currentHighScore = await getHighScore()
   state.scene = 'gameReady'
   ;(await bgmManager).play('game')
 })
@@ -50,20 +51,25 @@ events.$on('gameOver', async () => {
   ;(await bgmManager).stop()
   ;(await seManager).play('gameOver')
 
-  database.history.add({
-    date: now,
-    score: state.score,
-    altitude: state.y,
-    time: now.getTime() - state.startTime,
-  })
-
-  await msleep(2_500)
+  await Promise.all([
+    msleep(2_500),
+    database.history.add({
+      date: now,
+      score: state.score,
+      altitude: state.y,
+      time: now.getTime() - state.startTime,
+    }),
+  ])
 
   events.$emit('replay')
 })
 
 events.$on('replay', async () => {
   state.scene = 'replay'
+
+  if (state.currentHighScore < state.score) {
+    ;(await seManager).play('newRecord')
+  }
 })
 
 events.$on('jump', async () => {

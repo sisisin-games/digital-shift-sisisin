@@ -17,6 +17,7 @@
     "@vue/cli-service": "~4.2.3",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.1",
+    "animate.css": "3.7.2",
     "core-js": "^3.6.4",
     "dedent": "0.7.0",
     "dexie": "2.0.4",

@@ -33,6 +33,8 @@ function createInitialGameState() {
 export const state = Vue.observable({
   ...createInitialGameState(),
 
+  currentHighScore: 0,
+
   get tutorialCompleted() {
     return localStorage.getItem(`${pkg.name}_tutorialCompleted`) === 'true'
   },

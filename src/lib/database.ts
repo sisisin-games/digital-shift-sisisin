@@ -23,3 +23,8 @@ class Database extends Dexie {
 }
 
 export const database = new Database()
+
+export async function getHighScore() {
+  const entry = await database.history.orderBy('score').last()
+  return entry?.score ?? 0
+}

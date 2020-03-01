@@ -3,6 +3,7 @@ import App from './App.vue'
 import './components'
 import { events } from './lib/events'
 import './lib/sounds'
+import 'animate.css'
 import './styles/main.scss'
 
 Vue.config.productionTip = false

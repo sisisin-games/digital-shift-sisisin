@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tutorial fixed flex justify-center items-center w-full h-full text-center select-none cursor-default"
+    class="tutorial fixed flex justify-center items-center w-full h-full text-4xl text-center select-none cursor-default"
   >
     <v-document-event @click="next" @keydown.space="next" />
     <v-press-enter-key
@@ -10,13 +10,19 @@
     />
     <transition v-if="page" mode="out-in">
       <div class="page" :key="page" v-if="page === 1">
-        <vue-typer :text="lines" :repeat="0" @completed="next(3000)" />
+        <vue-typer :text="lines" :repeat="0" @completed="next(2000)" />
       </div>
       <div class="page text-6xl font-cinzel text-shadow-1" :key="page" v-else-if="page === 2">
-        <vue-typer :repeat="0" text="Digital Shift Sisisin" @completed="blink = true" />
+        <vue-typer
+          :repeat="0"
+          :pre-type-delay="1000"
+          :type-delay="100"
+          text="Digital Shift Sisisin"
+          @completed="blink = true"
+        />
       </div>
       <div class="page" :key="page" v-else-if="page === 3">
-        <img class="max-h-screen object-contain" src="@/assets/images/keyboard.jpg" />
+        <img class="max-h-half object-contain" src="@/assets/images/keyboard.jpg" />
         <vue-typer
           :repeat="0"
           :text="
@@ -26,7 +32,7 @@
         />
       </div>
       <div class="page" :key="page" v-else-if="page === 4">
-        <video src="@/assets/videos/1.mp4" autoplay loop />
+        <video src="@/assets/videos/1.mp4" class="max-h-half m-auto p-4 bg-black" autoplay loop />
         <vue-typer
           :repeat="0"
           :text="
@@ -36,7 +42,7 @@
         />
       </div>
       <div class="page" :key="page" v-else-if="page === 5">
-        <video src="@/assets/videos/2.mp4" autoplay loop />
+        <video src="@/assets/videos/2.mp4" class="max-h-half m-auto p-4 bg-black" autoplay loop />
         <vue-typer
           :repeat="0"
           text="その大きな変革に失敗した時点でゲームオーバーです。"
@@ -56,31 +62,28 @@
             <td>
               <img
                 src="@/assets/images/noboru.png"
-                class="inline-block bg-white rounded-full object-contain"
-                style="width: 8vmin; height: 8vmin;"
+                class="inline-block w-16 h-16 bg-white rounded-full object-contain"
               />
             </td>
-            <td class="text-right" style="padding-left: 4vmin;">x 2</td>
+            <td class="pl-8 text-right">x 2</td>
           </tr>
           <tr>
             <td>
               <img
                 src="@/assets/images/daisuke.png"
-                class="inline-block bg-white rounded-full object-contain"
-                style="width: 8vmin; height: 8vmin;"
+                class="inline-block w-16 h-16 bg-white rounded-full object-contain"
               />
             </td>
-            <td class="text-right" style="padding-left: 4vmin;">10 pt</td>
+            <td class="pl-8 text-right">10 pt</td>
           </tr>
           <tr>
             <td>
               <img
                 src="@/assets/images/opt.png"
-                class="inline-block bg-white rounded-full object-contain"
-                style="width: 8vmin; height: 8vmin;"
+                class="inline-block w-16 h-16 bg-white rounded-full object-contain"
               />
             </td>
-            <td class="text-right" style="padding-left: 4vmin;">1 pt</td>
+            <td class="pl-8 text-right">1 pt</td>
           </tr>
         </table>
       </div>
@@ -89,7 +92,7 @@
         <vue-typer
           :repeat="0"
           text="企業価値 1 兆円をめざせ！！"
-          style="font-size: 1.5em;"
+          class="text-6xl"
           :pre-type-delay="4000"
           @completed="blink = true"
         />
@@ -111,7 +114,7 @@ export default Vue.extend({
       '国と国、産業と産業、\nリアルとデジタルの境が消えていく瞬間に\n私たちは直面しています。',
       '官民一体で着々とデジタルシフトを遂行している中国やアメリカは、\n今、世界経済において\n圧倒的なプレゼンスを手に入れています。',
       'デジタルシフトを成し遂げたものだけが、\n次の未来に行けるのです。',
-      '日本が置かれている危機的状況をしっかり見据え、\n一刻も早くデジタルシフトを進めたいと、\n強い使命感を抱いている\nsisisin-games ユーザーは\n少なくありません。',
+      '日本が置かれている危機的状況をしっかり見据え、\n一刻も早くデジタルシフトを進めたいと、\n強い使命感を抱いている\n#sisisin_games ユーザーは\n少なくありません。',
       '変化の時代に求められる、本質的なデジタルシフト。',
       'それが',
     ],
@@ -142,7 +145,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .tutorial {
   background-color: #0009;
-  font: 4vmin 'Hiragino Kaku Gothic StdN', sans-serif;
+  font-family: 'Hiragino Kaku Gothic StdN', sans-serif;
 }
 
 .page {
@@ -160,12 +163,6 @@ export default Vue.extend({
   &.v-leave-to {
     opacity: 0;
     transform: translateY(-50%);
-  }
-
-  video {
-    max-height: 50vmin;
-    margin: auto;
-    border: 2vmin solid #000;
   }
 }
 

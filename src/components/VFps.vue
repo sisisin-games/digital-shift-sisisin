@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0">FPS: {{ fps }}</div>
+  <div class="absolute top-0 left-0 mt-2 ml-2 text-xs font-audiowide">FPS: {{ fps }}</div>
 </template>
 
 <script>

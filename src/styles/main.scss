@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  font-size: 2vmin;
+}
+
 html,
 body {
   display: flex;
@@ -13,6 +17,10 @@ body {
 
 .vsc-controller {
   display: none;
+}
+
+.max-h-half {
+  max-height: 50vmin;
 }
 
 .font-cinzel {

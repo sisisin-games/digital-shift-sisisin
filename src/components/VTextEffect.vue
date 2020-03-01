@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-effect absolute flex justify-center items-center text-5xl leading-none font-audiowide"
+    class="text-effect absolute flex justify-center items-center text-4xl leading-none font-audiowide"
     :style="{ '--x': cssX, '--y': cssY }"
   >
     {{ text }}

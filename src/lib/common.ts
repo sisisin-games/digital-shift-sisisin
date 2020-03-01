@@ -8,3 +8,7 @@ export function shuffle<T>(arr: T[]): T[] {
 
   return arr
 }
+
+export function msleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}

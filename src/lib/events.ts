@@ -3,6 +3,8 @@ import { getRandomQuoteText } from './quotes'
 import { bgmManager, seManager } from './sounds'
 import { createId, initGameState, state } from './state'
 import { Daisuke, Noboru, Point, TextEffect } from './types'
+import { database } from './database'
+import { msleep } from './common'
 
 export const events = new Vue()
 
@@ -36,15 +38,27 @@ events.$on('gameReady', async () => {
 
 events.$on('game', async () => {
   state.scene = 'game'
+  state.startTime = Date.now()
 })
 
 events.$on('gameOver', async () => {
+  const now = new Date()
+
   state.scene = 'gameOver'
   state.quote = undefined
   state.allTextEffects.clear()
   ;(await bgmManager).stop()
   ;(await seManager).play('gameOver')
-  await new Promise(resolve => setTimeout(resolve, 2_500))
+
+  database.history.add({
+    date: now,
+    score: state.score,
+    altitude: state.y,
+    time: now.getTime() - state.startTime,
+  })
+
+  await msleep(2_500)
+
   events.$emit('replay')
 })
 

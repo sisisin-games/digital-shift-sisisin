@@ -13,6 +13,7 @@ declare module 'vue/types/vue' {
 function createInitialGameState() {
   return {
     scene: 'title' as GameState,
+    startTime: 0,
     lastUpdatedTime: 0,
     topLine: 0,
 

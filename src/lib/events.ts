@@ -3,7 +3,7 @@ import { getRandomQuoteText } from './quotes'
 import { bgmManager, seManager } from './sounds'
 import { createId, initGameState, state } from './state'
 import { Daisuke, Noboru, Point, TextEffect } from './types'
-import { database, getHighScore } from './database'
+import { database, getHighScore, incrementProgress } from './database'
 import { msleep } from './common'
 
 export const events = new Vue()
@@ -53,6 +53,7 @@ events.$on('gameOver', async () => {
 
   await Promise.all([
     msleep(2_500),
+    incrementProgress('dead'),
     database.history.add({
       date: now,
       score: state.score,
@@ -74,6 +75,7 @@ events.$on('replay', async () => {
 
 events.$on('jump', async () => {
   ;(await seManager).play('jump')
+  await incrementProgress('jump')
 })
 
 events.$on('point', async (item: Point) => {
@@ -82,6 +84,7 @@ events.$on('point', async (item: Point) => {
   ;(await seManager).play('point')
   showRandomQuote()
   await showTextEffect({ text: '+1', x: item.x, y: item.y, key: createId() })
+  await incrementProgress('point')
 })
 
 events.$on('daisuke', async (item: Daisuke) => {
@@ -90,6 +93,7 @@ events.$on('daisuke', async (item: Daisuke) => {
   ;(await seManager).play('daisuke')
   showRandomQuote()
   await showTextEffect({ text: '+10', x: item.x, y: item.y, key: createId() })
+  await incrementProgress('daisuke')
 })
 
 events.$on('noboru', async (item: Noboru) => {
@@ -98,6 +102,7 @@ events.$on('noboru', async (item: Noboru) => {
   ;(await seManager).play('noboru')
   showRandomQuote()
   await showTextEffect({ text: 'x2', x: item.x, y: item.y, key: createId() })
+  await incrementProgress('noboru')
 })
 
 async function showTextEffect(ef: TextEffect) {

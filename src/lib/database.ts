@@ -8,7 +8,7 @@ export interface History {
   time: number
 }
 
-export type ProgressKey = 'jump' | 'point' | 'daisuke' | 'noboru' | 'dead'
+export type ProgressKey = 'jump' | 'point' | 'daisuke' | 'noboru' | 'dead' | 'deadWithNoboru'
 export interface Progress {
   key: ProgressKey
   value: number

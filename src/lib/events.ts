@@ -54,6 +54,7 @@ events.$on('gameOver', async () => {
   await Promise.all([
     msleep(2_500),
     incrementProgress('dead'),
+    nearbyNoboruExists() && incrementProgress('deadWithNoboru'),
     database.history.add({
       date: now,
       score: state.score,
@@ -119,4 +120,8 @@ async function showRandomQuote() {
   if (state.quote === quote) {
     state.quote = undefined
   }
+}
+
+function nearbyNoboruExists() {
+  return [...state.allSpecialPoints].some(n => Math.abs(state.y - n.y) < 2_000)
 }

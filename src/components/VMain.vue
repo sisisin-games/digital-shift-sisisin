@@ -4,7 +4,7 @@
     <v-layer />
     <v-sisisin />
     <v-quote-container />
-    <div class="score absolute top-0 leading-none text-4xl text-center font-audiowide">
+    <div class="score absolute top-0 mt-2 leading-none text-4xl font-audiowide">
       {{ $state.score }}
     </div>
   </main>

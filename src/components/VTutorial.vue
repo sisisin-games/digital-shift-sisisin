@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tutorial fixed flex justify-center items-center w-full h-full text-4xl text-center select-none cursor-default"
+    class="tutorial fixed flex justify-center items-center w-full h-full text-4xl text-center font-hiragino select-none cursor-default"
   >
     <v-document-event @click="next" @keydown.space="next" />
     <v-press-enter-key
@@ -146,7 +146,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .tutorial {
   background-color: #0009;
-  font-family: 'Hiragino Kaku Gothic StdN', sans-serif;
 }
 
 .page {

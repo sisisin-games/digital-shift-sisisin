@@ -48,7 +48,23 @@ body {
 }
 
 .backdrop-filter-blur {
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
+}
+
+.badge-dot {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0.3em;
+    height: 0.3em;
+    border-radius: 50%;
+    background-color: red;
+    pointer-events: none;
+  }
 }
 
 @keyframes blink {

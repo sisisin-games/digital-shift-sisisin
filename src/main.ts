@@ -3,15 +3,13 @@ import App from './App.vue'
 import './components'
 import { events } from './lib/events'
 import './lib/sounds'
-import 'animate.css'
 import './styles/main.scss'
+import 'animate.css'
 
 Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
   render: h => h(App),
-  mounted() {
-    events.$emit('title')
-  },
+  mounted: () => events.$emit('title'),
 })

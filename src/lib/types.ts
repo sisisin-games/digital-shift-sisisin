@@ -1,4 +1,11 @@
-export type GameState = 'title' | 'tutorial' | 'gameReady' | 'game' | 'gameOver' | 'replay'
+export type GameState =
+  | 'uninitialized'
+  | 'title'
+  | 'tutorial'
+  | 'gameReady'
+  | 'game'
+  | 'gameOver'
+  | 'replay'
 
 export interface Rock {
   type: 'rock'

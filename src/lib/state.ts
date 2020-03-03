@@ -1,8 +1,9 @@
-import { randomTable } from '@/compositions/randomTable'
-import { useId } from '@/compositions/useId'
 import Vue from 'vue'
 import pkg from '../../package.json'
-import { Daisuke, GameState, Noboru, Point, Quote, Rock, TextEffect } from './types.js'
+import { randomTable } from '../compositions/randomTable'
+import { useId } from '../compositions/useId'
+import { Daisuke, GameState, Noboru, Point, Quote, Rock, TextEffect } from './types'
+import { Achievement } from './achievements.js'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -12,7 +13,6 @@ declare module 'vue/types/vue' {
 
 function createInitialGameState() {
   return {
-    scene: 'title' as GameState,
     startTime: 0,
     lastUpdatedTime: 0,
     topLine: 0,
@@ -31,9 +31,12 @@ function createInitialGameState() {
 }
 
 export const state = Vue.observable({
-  ...createInitialGameState(),
-
+  scene: 'uninitialized' as GameState,
+  achievementShown: false,
+  newAchievementIds: [] as Achievement['id'][],
   currentHighScore: 0,
+
+  ...createInitialGameState(),
 
   get tutorialCompleted() {
     return localStorage.getItem(`${pkg.name}_tutorialCompleted`) === 'true'

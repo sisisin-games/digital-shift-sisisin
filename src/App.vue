@@ -10,7 +10,6 @@
     <v-main v-else />
     <v-tutorial v-if="$state.scene === 'tutorial'" />
     <v-replay v-if="$state.scene === 'replay'" />
-    <v-quote-container />
   </div>
 </template>
 

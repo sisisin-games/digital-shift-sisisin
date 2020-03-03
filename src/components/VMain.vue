@@ -1,9 +1,10 @@
 <template>
-  <main class="main relative m-auto select-none">
+  <main class="main relative flex justify-center items-center m-auto select-none">
     <v-document-event @keydown.shift="shift" />
     <v-layer />
     <v-sisisin />
-    <div class="score absolute inset-x-0 top-0 leading-none text-4xl text-center font-audiowide">
+    <v-quote-container />
+    <div class="score absolute top-0 leading-none text-4xl text-center font-audiowide">
       {{ $state.score }}
     </div>
   </main>

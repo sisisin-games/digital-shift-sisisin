@@ -1,4 +1,10 @@
 {
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
   "cSpell.words": [
     "arraybuffer",
     "beforeend",
@@ -9,5 +15,13 @@
     "purgecss",
     "tailwindcss",
     "typer"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [120],
+  "eslint.validate": ["javascript", "typescript"],
+  "prettier.disableLanguages": ["javascript", "typescript"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

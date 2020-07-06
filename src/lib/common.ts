@@ -9,6 +9,9 @@ export function shuffle<T>(arr: T[]): T[] {
   return arr
 }
 
-export function msleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+export async function msleep(ms: number): Promise<void>
+export async function msleep<T>(ms: number, value: T): Promise<T>
+export async function msleep<T>(ms: number, value?: T): Promise<T | undefined> {
+  await new Promise(resolve => setTimeout(resolve, ms))
+  return value
 }

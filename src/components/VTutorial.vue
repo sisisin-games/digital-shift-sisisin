@@ -3,11 +3,7 @@
     class="tutorial fixed flex justify-center items-center w-full h-full text-4xl text-center font-hiragino select-none cursor-default"
   >
     <v-document-event @click="next" @keydown.space="next" />
-    <v-press-enter-key
-      class="fixed bottom-0 mb-2 text-xs"
-      :class="{ blink, 'opacity-50': !blink }"
-      @enter="next"
-    />
+    <v-press-enter-key class="fixed bottom-0 mb-2 text-xs" :class="{ blink, 'opacity-50': !blink }" @enter="next" />
     <transition v-if="page" mode="out-in">
       <div class="page" :key="page" v-if="page === 1">
         <vue-typer :text="lines" :repeat="0" @completed="next(2000)" />
@@ -25,9 +21,7 @@
         <img class="max-h-half object-contain" src="@/assets/images/keyboard.jpg" />
         <vue-typer
           :repeat="0"
-          :text="
-            '左右の Shift キーを両方とも使用します。\nその他のキーやマウスは、ゲーム中においては使用しません。'
-          "
+          :text="'左右の Shift キーを両方とも使用します。\nその他のキーやマウスは、ゲーム中においては使用しません。'"
           @completed="blink = true"
         />
       </div>
@@ -35,19 +29,13 @@
         <video src="@/assets/videos/1.mp4" class="max-h-half m-auto p-4 bg-black" autoplay loop />
         <vue-typer
           :repeat="0"
-          :text="
-            'Shift キーを押すと、変化の時代に求められる\n本質的なデジタルシフトを sisisin が実践します。'
-          "
+          :text="'Shift キーを押すと、変化の時代に求められる\n本質的なデジタルシフトを sisisin が実践します。'"
           @completed="blink = true"
         />
       </div>
       <div class="page" :key="page" v-else-if="page === 5">
         <video src="@/assets/videos/2.mp4" class="max-h-half m-auto p-4 bg-black" autoplay loop />
-        <vue-typer
-          :repeat="0"
-          text="その大きな変革に失敗した時点でゲームオーバーです。"
-          @completed="blink = true"
-        />
+        <vue-typer :repeat="0" text="その大きな変革に失敗した時点でゲームオーバーです。" @completed="blink = true" />
       </div>
       <div class="page" :key="page" v-else-if="page === 6">
         <table class="m-auto mt-8 animated fadeInRight">
@@ -71,10 +59,7 @@
           </tr>
           <tr>
             <td>
-              <img
-                src="@/assets/images/opt.png"
-                class="inline-block w-16 h-16 bg-white rounded-full object-contain"
-              />
+              <img src="@/assets/images/opt.png" class="inline-block w-16 h-16 bg-white rounded-full object-contain" />
             </td>
             <td class="pl-8 text-right">1 pt</td>
           </tr>
@@ -82,9 +67,7 @@
 
         <vue-typer
           :repeat="0"
-          :text="
-            '日本企業の変革を進めると、ホールディングスは\n“デジタルシフトカンパニー” として発展します。'
-          "
+          :text="'日本企業の変革を進めると、ホールディングスは\n“デジタルシフトカンパニー” として発展します。'"
           @completed="blink = true"
         />
       </div>

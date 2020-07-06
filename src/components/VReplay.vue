@@ -17,9 +17,7 @@
         <v-icon class="text-6xl">arrow_right</v-icon>
       </div>
       <span class="text-6xl animated delay-2s jello">{{ $state.score }}</span>
-      <div class="absolute left-100 ml-4 text-2xl">
-        (+{{ $state.score - $state.currentHighScore }})
-      </div>
+      <div class="absolute left-100 ml-4 text-2xl">(+{{ $state.score - $state.currentHighScore }})</div>
     </div>
     <v-press-enter-key class="blink" @enter="$events.$emit('title')" />
   </div>

@@ -7,10 +7,7 @@
         実績
         <div class="flex flex-col justify-between items-center ml-2 text-xs font-normal">
           <div class="flex w-64 h-3 mb-1 bg-white rounded-full overflow-hidden">
-            <div
-              class="bg-green-500"
-              :style="{ width: `${(newAndActiveAtsCount / allAchievements.length) * 100}%` }"
-            />
+            <div class="bg-green-500" :style="{ width: `${(newAndActiveAtsCount / allAchievements.length) * 100}%` }" />
           </div>
           全
           {{ allAchievements.length.toLocaleString() }}
@@ -28,11 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="a in allAchievements"
-            :key="a.id"
-            :class="{ 'opacity-50': !isNew(a) && !isActive(a) }"
-          >
+          <tr v-for="a in allAchievements" :key="a.id" :class="{ 'opacity-50': !isNew(a) && !isActive(a) }">
             <td class="py-2 px-4">
               <div class="flex justify-between items-center">
                 <template v-if="isNew(a)">
@@ -51,15 +44,9 @@
             <td class="py-2 px-4">
               <div class="flex justify-between items-center">
                 {{ a.description }}
-                <div
-                  v-if="!isNew(a) && !isActive(a)"
-                  class="flex flex-col items-center ml-2 text-xs"
-                >
+                <div v-if="!isNew(a) && !isActive(a)" class="flex flex-col items-center ml-2 text-xs">
                   <div class="flex w-32 h-1 bg-white rounded-full overflow-hidden">
-                    <div
-                      class="bg-green-500"
-                      :style="{ width: `${(getValue(a) / getMaxValue(a)) * 100}%` }"
-                    />
+                    <div class="bg-green-500" :style="{ width: `${(getValue(a) / getMaxValue(a)) * 100}%` }" />
                   </div>
                   {{ getValue(a).toLocaleString() }} / {{ getMaxValue(a).toLocaleString() }}
                 </div>

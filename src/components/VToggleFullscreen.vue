@@ -1,15 +1,8 @@
 <template>
-  <v-icon
-    v-if="isFullscreen"
-    class="mr-2 cursor-pointer"
-    title="フルスクリーン解除"
-    @click.stop="exitFullscreen"
-  >
+  <v-icon v-if="isFullscreen" class="mr-2 cursor-pointer" title="フルスクリーン解除" @click.stop="exitFullscreen">
     fullscreen_exit
   </v-icon>
-  <v-icon v-else class="mr-2 cursor-pointer" title="フルスクリーン" @click.stop="enterFullscreen"
-    >fullscreen</v-icon
-  >
+  <v-icon v-else class="mr-2 cursor-pointer" title="フルスクリーン" @click.stop="enterFullscreen">fullscreen</v-icon>
 </template>
 
 <script>

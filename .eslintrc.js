@@ -15,6 +15,7 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-constant-condition': 'off',

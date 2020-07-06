@@ -1,13 +1,7 @@
 import Vue from 'vue'
 import { allAchievements } from './achievements'
 import { msleep } from './common'
-import {
-  database,
-  getAllActiveAchievements,
-  getHighScore,
-  incrementProgress,
-  getAllProgresses,
-} from './database'
+import { database, getAllActiveAchievements, getHighScore, incrementProgress, getAllProgresses } from './database'
 import { getRandomQuoteText } from './quotes'
 import { bgmManager, seManager } from './sounds'
 import { createId, initGameState, state } from './state'

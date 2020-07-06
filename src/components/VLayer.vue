@@ -1,12 +1,7 @@
 <template>
   <div class="layer" :style="{ '--x': $state.x, '--y': $state.y }">
     <v-ground />
-    <component
-      v-for="block in $state.blocks"
-      :key="block.id"
-      :is="`v-${block.type}`"
-      v-bind="block"
-    />
+    <component v-for="block in $state.blocks" :key="block.id" :is="`v-${block.type}`" v-bind="block" />
     <v-text-effect v-for="ef in $state.allTextEffects" :key="ef.key" v-bind="ef" />
   </div>
 </template>

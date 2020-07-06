@@ -5,7 +5,7 @@
       title="実績"
       class="mr-2 cursor-pointer"
       :class="{
-        'text-yellow-500 badge-dot animated infinite tada': $state.newAchievementIds.length,
+        'text-yellow-500 badge-dot animate__animated animate__infinite animate__tada': $state.newAchievementIds.length,
       }"
       @click.stop="$state.achievementShown = true"
     >

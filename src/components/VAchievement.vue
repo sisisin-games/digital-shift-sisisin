@@ -30,7 +30,7 @@
               <div class="flex justify-between items-center">
                 <template v-if="isNew(a)">
                   {{ a.name }}
-                  <v-icon class="ml-2 text-base text-yellow-500 animated infinite tada">
+                  <v-icon class="ml-2 text-base text-yellow-500 animate__animated animate__infinite animate__tada">
                     fiber_new
                   </v-icon>
                 </template>

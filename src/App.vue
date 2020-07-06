@@ -8,7 +8,7 @@
         v-if="$state.scene === 'uninitialized'"
         class="uninitialized fixed inset-0 flex justify-center items-center select-none"
       >
-        <span class="text-3xl font-audiowide animated infinite pulse">Loading...</span>
+        <span class="text-3xl font-audiowide animate__animated animate__infinite animate__pulse">Loading...</span>
       </div>
     </transition>
     <v-bg-image />

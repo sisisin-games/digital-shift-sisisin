@@ -38,7 +38,7 @@
         <vue-typer :repeat="0" text="その大きな変革に失敗した時点でゲームオーバーです。" @completed="blink = true" />
       </div>
       <div class="page" :key="page" v-else-if="page === 6">
-        <table class="m-auto mt-8 animated fadeInRight">
+        <table class="m-auto mt-8 animate__animated animate__fadeInRight">
           <tr>
             <td>
               <img
